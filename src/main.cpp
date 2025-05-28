@@ -1,7 +1,9 @@
 #include <iostream>
 
+#include "template.hpp"
+
 int main(int argc, char* argv[]) {
-  std::cout << "Hello world!";
+  SourceName::TaskId::solve();
 
   return 0;
 }
