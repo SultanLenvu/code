@@ -16,12 +16,12 @@
 - Система сборки: CMake + Ninja.
 
 ## Build
-'''
+```
 cd code
 mkdir build
 cd build
 cmake ..
-'''
+```
 
 ## API
 Не предоставляется.
