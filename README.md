@@ -6,6 +6,13 @@
 - https://leetcode.com/
 - https://coderun.yandex.ru/catalog
 
+Все решения для решенных задач должны быть представлены по единому шаблону.
+Шаблон для решения задач представлен в файлах src/template.hpp и src/template.cpp
+
+Задачи сгруппированы в соответствии с их источником:
+- src/coderun
+- src/leetcode
+
 ## Environment
 - Аппаратная архитектура: x86, AMD64;
 - Операционная система: Linux, Windows;
