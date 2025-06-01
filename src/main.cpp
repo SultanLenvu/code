@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "template.hpp"
+#include "general/sort/insert.hpp"
 
 int main(int argc, char* argv[]) {
-  SourceName::TaskId::solve();
+  sort::insert::solve();
 
   return 0;
 }

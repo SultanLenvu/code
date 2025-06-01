@@ -15,13 +15,12 @@
  * @author Автор(ы) решения
  *
  * @note Ссылка на задачу, если есть.
- * @note Подробное описание задачи с примером.
- * @note Статус решения: решено оптимально, решено, в процессе решения, не
- * решено.
+ * @note Подробное описание задачи с примером, если нет ссылки.
  *
- * @note Описание общей идеи решения
- * @note Временная сложность для приведенного решения
- * @note Затраты по памяти для приведенного решения
+ * @note Описание общей идеи решения.
+ * @note Сложность по времени.
+ * @note Сложность по памяти.
+ * @note Комментарии по решению, если нужны.
  */
 
 /**
@@ -30,10 +29,10 @@
  */
 
 /**
- * @namespace SourceName
- * @brief Пространство имен задач из SourceName
+ * @namespace sourcename
+ * @brief Пространство имен задач из sourcename
  */
-namespace SourceName {
+namespace sourcename {
 
 /**
  * Интерфейс для запуска решения задачи должен быть представлен в виде
@@ -41,13 +40,13 @@ namespace SourceName {
  */
 
 /**
- * @namespace TaskId
+ * @namespace taskid
  * @brief Интерфейс для взаимодействия с решением задачи
  */
-namespace TaskId {
+namespace taskid {
 // Функция для вызова из main.cpp
 void solve();
 
-}  // namespace TaskId
+}  // namespace taskid
 
-}  // namespace SourceName
+}  // namespace sourcename

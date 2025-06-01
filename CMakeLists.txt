@@ -13,12 +13,16 @@ target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
 
 target_sources(${CMAKE_PROJECT_NAME} PUBLIC
     src/template.hpp
+
+    src/general/sort/insert.hpp
 )
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     src/main.cpp
     src/template.cpp
+
+    src/general/sort/insert.cpp
 )
 
 # Add project symbols (macros)

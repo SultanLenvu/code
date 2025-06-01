@@ -2,10 +2,10 @@
 
 #include "template.hpp"
 
-namespace SourceName {
-namespace TaskId {
+namespace sourcename {
+namespace taskid {
 
 void solve() { std::cout << "Solve!"; }
 
-}  // namespace TaskId
-}  // namespace SourceName
+}  // namespace taskid
+}  // namespace sourcename
