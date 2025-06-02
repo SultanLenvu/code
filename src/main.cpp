@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "general/sort/insert.hpp"
+#include "general/sort/merge.hpp"
 
 int main(int argc, char* argv[]) {
-  sort::insert::solve();
+  // sort::merge::solve();
 
   return 0;
 }

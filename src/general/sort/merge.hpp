@@ -1,13 +1,15 @@
 /**
- * @file insert.hpp
- * @brief Сортировка вставками
+ * @file merge.hpp
+ * @brief Сортировка слиянием
  * @author Ленву С.А.
  *
  *
  * @note Описание общей идеи решения
- * @note Cложность по времени: O(n^2)
+ * @note Cложность по времени: O(lg(n))
  * @note Сложность по памяти: O(1)
  */
+
+#include <vector>
 
 /**
  * @namespace sort
@@ -19,10 +21,10 @@ namespace sort {
  * @namespace insert
  * @brief Сортирвка вставками
  */
-namespace insert {
+namespace merge {
 
-void solve();
+void solve(std::vector<int>& seq);
 
-}  // namespace insert
+}  // namespace merge
 
 }  // namespace sort
