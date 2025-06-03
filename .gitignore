@@ -1,6 +1,5 @@
 # clang cache
 .cache/
-build/
 
 # C++ objects and libs
 *.slo
@@ -15,4 +14,4 @@ build/
 *.dylib
 
 # Build directory
-build
+build/

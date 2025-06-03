@@ -6,32 +6,46 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(GTest REQUIRED)
 
-# Main ---------------------------------------------------------------------------------->
+# Source library ----------------------------------------------------------------------->
+set(SOURCE_LIBRARY_NAME CodeSource)
 
-# Add main executable
-add_executable(${CMAKE_PROJECT_NAME})
+# Add library
+add_library(${SOURCE_LIBRARY_NAME} STATIC)
 
-# Add main directories
-target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
+# Add source directories
+target_include_directories(${SOURCE_LIBRARY_NAME} PUBLIC
     src
 )
 
-# Add main header-files
-target_sources(${CMAKE_PROJECT_NAME} PUBLIC
+# Add header files
+target_sources(${SOURCE_LIBRARY_NAME} PUBLIC
     src/template.hpp
 
     src/general/sort/insert.hpp
     src/general/sort/merge.hpp
 )
 
-
-# Add main source-files
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    src/main.cpp
+# Add implemetation files
+target_sources(${SOURCE_LIBRARY_NAME} PRIVATE
     src/template.cpp
 
     src/general/sort/insert.cpp
     src/general/sort/merge.cpp
+)
+
+# Main ---------------------------------------------------------------------------------->
+
+# Add executable
+add_executable(${CMAKE_PROJECT_NAME})
+
+# Add source directories
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
+    src
+)
+
+# Add implemetation files
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+    src/main.cpp
 )
 
 # Add project symbols (macros)
@@ -39,13 +53,14 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
 )
 
-# Link main target with libraries
+# Link libraries
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
+    ${SOURCE_LIBRARY_NAME}
 )
 
 # Tests ---------------------------------------------------------------------------------->
 
-set(TEST_PROJECT_NAME CodeTests)
+set(TEST_PROJECT_NAME CodeTest)
 
 # Add test executable
 add_executable(${TEST_PROJECT_NAME})
@@ -53,15 +68,11 @@ add_executable(${TEST_PROJECT_NAME})
 # Add test directories
 target_include_directories(${TEST_PROJECT_NAME} PUBLIC
     tests
-    src
 )
 
-# Add test sources
+# Add  sources
 target_sources(${TEST_PROJECT_NAME} PRIVATE
     tests/general/sort/merge.cpp
-
-    src/general/sort/merge.hpp
-    src/general/sort/merge.cpp
 )
 
 # Add project symbols (macros)
@@ -71,10 +82,11 @@ target_compile_definitions(${TEST_PROJECT_NAME} PRIVATE
 
 # Link test target with libraries
 target_link_libraries(${TEST_PROJECT_NAME} PRIVATE
+    ${SOURCE_LIBRARY_NAME}
     GTest::GTest
     GTest::Main
 )
 
-# Включение тестирования
+# Testing
 enable_testing()
 add_test(NAME Merge COMMAND ${TEST_PROJECT_NAME})

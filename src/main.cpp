@@ -1,9 +1,7 @@
 #include <iostream>
 
-#include "general/sort/merge.hpp"
-
 int main(int argc, char* argv[]) {
-  // sort::merge::solve();
+  std::cout << "Main running." << std::endl;
 
   return 0;
 }

@@ -10,13 +10,7 @@ static void alg_rec(std::vector<int>& seq, int p, int r);
 static void merge(std::vector<int>& seq, int p, int q, int r);
 static void printVector(std::string_view text, const std::vector<int>& seq);
 
-void solve(std::vector<int>& seq) {
-  // printVector("Input: ", seq);
-
-  alg_rec(seq, 0, seq.size() - 1);
-
-  // printVector("Sorted: ", seq);
-}
+void solve(std::vector<int>& seq) { alg_rec(seq, 0, seq.size() - 1); }
 
 void alg_rec(std::vector<int>& seq, int p, int r) {
   if (p < r) {

@@ -17,3 +17,11 @@ TEST(Merge, TestCase2) {
   sort::merge::solve(seq);
   EXPECT_EQ(seq, result);
 }
+
+TEST(Merge, TestCase3) {
+  std::vector<int> seq{1, 1, 1, 1, 1};
+  std::vector<int> result{1, 1, 1, 1, 1};
+
+  sort::merge::solve(seq);
+  EXPECT_EQ(seq, result);
+}
