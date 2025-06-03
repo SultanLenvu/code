@@ -39,7 +39,7 @@ target_sources(${SOURCE_LIBRARY_NAME} PRIVATE
 add_executable(${CMAKE_PROJECT_NAME})
 
 # Add source directories
-target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     src
 )
 
@@ -66,13 +66,13 @@ set(TEST_PROJECT_NAME CodeTest)
 add_executable(${TEST_PROJECT_NAME})
 
 # Add test directories
-target_include_directories(${TEST_PROJECT_NAME} PUBLIC
+target_include_directories(${TEST_PROJECT_NAME} PRIVATE
     tests
 )
 
 # Add  sources
 target_sources(${TEST_PROJECT_NAME} PRIVATE
-    tests/general/sort/merge.cpp
+    tests/general/sort/merge_test.cpp
 )
 
 # Add project symbols (macros)

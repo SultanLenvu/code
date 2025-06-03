@@ -8,7 +8,6 @@ namespace merge {
 
 static void alg_rec(std::vector<int>& seq, int p, int r);
 static void merge(std::vector<int>& seq, int p, int q, int r);
-static void printVector(std::string_view text, const std::vector<int>& seq);
 
 void solve(std::vector<int>& seq) { alg_rec(seq, 0, seq.size() - 1); }
 
@@ -42,16 +41,6 @@ void merge(std::vector<int>& seq, int p, int q, int r) {
     seq[p++] = subseq2[j++];
   }
 }
-
-void printVector(std::string_view text, const std::vector<int>& vec) {
-  std::cout << text << std::endl;
-  for (const auto& i : vec) {
-    std::cout << i << " ";
-  }
-  std::cout << std::endl;
-}
-
-bool test() { return false; }
 
 }  // namespace merge
 }  // namespace sort
