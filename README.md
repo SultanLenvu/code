@@ -21,7 +21,7 @@
 - Система сборки: CMake + Ninja.
 
 ## Dependencies
-Отсутствуют.
+- GTest - библиотека для unit-тестирования. Установка "sudo apt install libgtest-dev".
 
 ## Build
 ```

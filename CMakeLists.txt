@@ -50,7 +50,3 @@ target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     ${SOURCE_LIBRARY_NAME}
     GTest::GTest
 )
-
-# Testing ---------------------------------------------------------------------------------->
-enable_testing()
-add_test(NAME Merge COMMAND ${CMAKE_PROJECT_NAME})

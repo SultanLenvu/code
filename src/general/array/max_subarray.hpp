@@ -8,13 +8,11 @@
  * Например для массива A = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5,
  * -22, 15, 4, 7} решение будет подмассив a = {18, 20, -7, 12}.
  *
- * @note Описание общей идеи решения
- * @note Cложность по времени: O(n*lg(n))
- * @note Сложность по памяти: O(1)
  */
 
 #pragma once
 
+#include <span>
 #include <vector>
 
 /**
@@ -29,7 +27,27 @@ namespace array {
  */
 namespace maxsub {
 
-std::vector<int> solve(std::vector<int>& seq);
+/**
+ * @brief Рекурсивный алгоритм
+ * @note Cложность по времени: O(n*lg(n))
+ * @note Сложность по памяти: O(1)
+ *
+ * @param array Входной массив
+ * @param maxSubarray Максимальный подмассив
+ * @return Сумма элементов максимального подмассива
+ */
+int solve1(const std::span<int>& array, std::span<int>& maxSubarray);
+
+/**
+ * @brief Нерекурсивный алгоритм
+ * @note Cложность по времени: O(n)
+ * @note Сложность по памяти: O(1)
+ *
+ * @param array Входной массив
+ * @param maxSubarray Максимальный подмассив
+ * @return Сумма элементов максимального подмассива
+ */
+int solve2(const std::span<int>& array, std::span<int>& maxSubarray);
 
 }  // namespace maxsub
 
