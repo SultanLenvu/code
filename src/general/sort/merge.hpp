@@ -9,6 +9,8 @@
  * @note Сложность по памяти: O(1)
  */
 
+#pragma once
+
 #include <vector>
 
 /**
@@ -18,8 +20,8 @@
 namespace sort {
 
 /**
- * @namespace insert
- * @brief Сортирвка вставками
+ * @namespace merge
+ * @brief Сортирвка слиянием
  */
 namespace merge {
 

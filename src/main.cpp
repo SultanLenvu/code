@@ -1,7 +1,11 @@
 #include <iostream>
 
-int main(int argc, char* argv[]) {
-  std::cout << "Main running." << std::endl;
+#include <gtest/gtest.h>
 
-  return 0;
+int main(int argc, char* argv[]) {
+  ::testing::InitGoogleTest(&argc, argv);
+
+  ::testing::GTEST_FLAG(filter) = "MaxSubarray.*";
+
+  return RUN_ALL_TESTS();
 }
