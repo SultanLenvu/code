@@ -9,7 +9,7 @@ TEST(MaxSubarray, TestCase1) {
 
   std::span<int> input(array), output;
 
-  array::maxsub::solve1(input, output);
+  array::maxsub::solve2(input, output);
   std::vector<int> result(output.begin(), output.end());
 
   EXPECT_EQ(result, answere);

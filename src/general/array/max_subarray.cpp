@@ -10,31 +10,61 @@ int solve1(const std::span<int>& array, std::span<int>& maxSubarray) {
   if (array.size() == 1) {
     maxSubarray = array;
     return array[0];
+  }
+
+  auto mid = array.size() / 2;
+
+  auto leftPart = array.subspan(0, mid);
+  std::span<int> leftMaxSub;
+  auto leftMax = solve1(leftPart, leftMaxSub);
+
+  auto rigthPart = array.subspan(mid);
+  std::span<int> rightMaxSub;
+  auto rigthMax = solve1(rigthPart, rightMaxSub);
+
+  std::span<int> crossMaxSub;
+  auto crossMax = findMaxCrossSubarray(array, crossMaxSub);
+
+  if (leftMax >= rigthMax && leftMax >= crossMax) {
+    maxSubarray = leftMaxSub;
+    return leftMax;
+  } else if (rigthMax >= leftMax && rigthMax >= crossMax) {
+    maxSubarray = rightMaxSub;
+    return rigthMax;
   } else {
-    auto mid = array.size() / 2;
+    maxSubarray = crossMaxSub;
+    return crossMax;
+  }
+}
 
-    auto leftPart = array.subspan(0, mid);
-    std::span<int> leftMaxSub;
-    auto leftMax = solve1(leftPart, leftMaxSub);
+int solve2(const std::span<int>& array, std::span<int>& maxSubarray) {
+  if (array.size() == 1) {
+    maxSubarray = array;
+    return array[0];
+  }
 
-    auto rigthPart = array.subspan(mid);
-    std::span<int> rightMaxSub;
-    auto rigthMax = solve1(rigthPart, rightMaxSub);
+  int maxSum = array[0], rightSum = array[0];
+  int maxBegin = 0, maxEnd = 0, rightBegin = 0;
 
-    std::span<int> crossMaxSub;
-    auto crossMax = findMaxCrossSubarray(array, crossMaxSub);
+  for (int i = 1; i < array.size(); ++i) {
+    rightSum += array[i];
+    if (array[rightBegin] < 0) {
+      rightBegin++;
+    }
+    if (array[i] > rightSum) {
+      rightSum = array[i];
+      rightBegin = i;
+    }
 
-    if (leftMax >= rigthMax && leftMax >= crossMax) {
-      maxSubarray = leftMaxSub;
-      return leftMax;
-    } else if (rigthMax >= leftMax && rigthMax >= crossMax) {
-      maxSubarray = rightMaxSub;
-      return rigthMax;
-    } else {
-      maxSubarray = crossMaxSub;
-      return crossMax;
+    if (rightSum > maxSum) {
+      maxSum = rightSum;
+      maxBegin = rightBegin;
+      maxEnd = i;
     }
   }
+
+  maxSubarray = array.subspan(maxBegin, maxEnd - maxBegin + 1);
+  return maxSum;
 }
 
 int findMaxCrossSubarray(const std::span<int>& array,
