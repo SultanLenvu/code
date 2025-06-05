@@ -48,9 +48,7 @@ int solve2(const std::span<int>& array, std::span<int>& maxSubarray) {
 
   for (int i = 1; i < array.size(); ++i) {
     rightSum += array[i];
-    if (array[rightBegin] < 0) {
-      rightBegin++;
-    }
+
     if (array[i] > rightSum) {
       rightSum = array[i];
       rightBegin = i;

@@ -46,6 +46,23 @@ int solve1(const std::span<int>& array, std::span<int>& maxSubarray);
  * @param array Входной массив
  * @param maxSubarray Максимальный подмассив
  * @return Сумма элементов максимального подмассива
+ *
+ * @note Логика решения:
+ * MAX_LAST(A[1]) = A[1]
+ * MAX(A[1]) = A[1]
+ *
+ * MAX(A[1..2]) = MAX(A[1]) || MAX_LAST(A[1..2])
+ * MAX_LAST(A[1..2]) = MAX_LAST(A[1]) + A[2] || A[2]
+ *
+ * MAX(A[1..3]) = MAX(A[1..2]) || MAX_LAST(A[1..3])
+ * MAX_LAST(A[1..3]) = MAX_LAST(A[1..2]) + A[3] || A[3]
+ * ...
+ * MAX(A[1..j]) = MAX(A[1..j-1]) || MAX_LAST(A[1..j])
+ * MAX_LAST(A[1..j]) = MAX_LAST(A[1..j - 1]) + A[j] || A[j]
+ *
+ * MAX(A[1..j + 1]) = MAX(A[1..j]) || MAX_LAST(A[1..j + 1])
+ * MAX_LAST(A[1..j + 1) = MAX_LAST(A[1..j]) + A[j + 1] || A[j + 1]
+ *
  */
 int solve2(const std::span<int>& array, std::span<int>& maxSubarray);
 
