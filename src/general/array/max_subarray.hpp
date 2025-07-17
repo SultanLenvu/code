@@ -15,16 +15,7 @@
 #include <span>
 #include <vector>
 
-/**
- * @namespace array
- * @brief Обработка массивов
- */
 namespace array {
-
-/**
- * @namespace maxsubarray
- * @brief Сортирвка вставками
- */
 namespace maxsub {
 
 /**
@@ -67,5 +58,4 @@ int solve1(const std::span<int>& array, std::span<int>& maxSubarray);
 int solve2(const std::span<int>& array, std::span<int>& maxSubarray);
 
 }  // namespace maxsub
-
 }  // namespace array

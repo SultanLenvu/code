@@ -26,6 +26,8 @@ target_sources(${CMAKE_PROJECT_NAME} PUBLIC
 
     src/general/array/max_subarray_test.cpp
     src/general/array/max_subarray.hpp
+
+    src/leetcode/task1.hpp
 )
 
 # Add implemetation files
@@ -36,8 +38,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 
     src/general/sort/insert.cpp
     src/general/sort/merge.cpp
-
     src/general/array/max_subarray.cpp
+
+    src/leetcode/task1.cpp
 )
 
 # Add project symbols (macros)

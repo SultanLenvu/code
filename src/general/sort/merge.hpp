@@ -13,20 +13,10 @@
 
 #include <vector>
 
-/**
- * @namespace sort
- * @brief Реализации алгоритмов сортировки
- */
 namespace sort {
-
-/**
- * @namespace merge
- * @brief Сортирвка слиянием
- */
 namespace merge {
 
 void solve(std::vector<int>& seq);
 
 }  // namespace merge
-
 }  // namespace sort
