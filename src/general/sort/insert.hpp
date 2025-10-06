@@ -11,20 +11,8 @@
 
 #pragma once
 
-/**
- * @namespace sort
- * @brief Реализации алгоритмов сортировки
- */
-namespace sort {
-
-/**
- * @namespace insert
- * @brief Сортирвка вставками
- */
-namespace insert {
+namespace sort::insert {
 
 void solve();
 
-}  // namespace insert
-
-}  // namespace sort
+}  // namespace sort::insert

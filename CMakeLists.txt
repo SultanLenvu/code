@@ -4,52 +4,39 @@ project(Code VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Connecting used libraries
 find_package(GTest REQUIRED)
 
-# Main ---------------------------------------------------------------------------------->
+# Recursively getting all header files
+file(
+    GLOB_RECURSE
+    CODE_HEADERS
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp
+)
+# Recursively getting all header files
+file(
+    GLOB_RECURSE
+    CODE_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
+)
 
 # Add executable
-add_executable(${CMAKE_PROJECT_NAME})
+add_executable(${CMAKE_PROJECT_NAME} ${CODE_HEADERS} ${CODE_SOURCES})
 
-# Add source directories
+# Add include directories
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     src
 )
 
-# Add header files
-target_sources(${CMAKE_PROJECT_NAME} PUBLIC
-    src/template.hpp
-
-    src/general/sort/insert.hpp
-    src/general/sort/merge.hpp
-    src/general/sort/merge_test.cpp
-
-    src/general/array/max_subarray_test.cpp
-    src/general/array/max_subarray.hpp
-
-    src/leetcode/task1.hpp
-)
-
-# Add implemetation files
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    src/main.cpp
-
-    src/template.cpp
-
-    src/general/sort/insert.cpp
-    src/general/sort/merge.cpp
-    src/general/array/max_subarray.cpp
-
-    src/leetcode/task1.cpp
+# Add project options
+target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE
 )
 
 # Add project symbols (macros)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
-    # Add user defined symbols
 )
 
 # Link libraries
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
-    ${SOURCE_LIBRARY_NAME}
     GTest::GTest
 )

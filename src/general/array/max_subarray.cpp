@@ -1,7 +1,6 @@
 #include "max_subarray.hpp"
 
-namespace array {
-namespace maxsub {
+namespace array::maxsub {
 
 static int findMaxCrossSubarray(const std::span<int>& array,
                                 std::span<int>& maxSubarray);
@@ -94,5 +93,4 @@ int findMaxCrossSubarray(const std::span<int>& array,
   return leftSum + rigthSum;
 }
 
-}  // namespace maxsub
-}  // namespace array
+}  // namespace array::maxsub

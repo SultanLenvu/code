@@ -2,10 +2,8 @@
 
 #include "template.hpp"
 
-namespace sourcename {
-namespace taskid {
+namespace sourcename::taskid {
 
 void solve() { std::cout << "Solve!"; }
 
-}  // namespace taskid
-}  // namespace sourcename
+}  // namespace sourcename::taskid

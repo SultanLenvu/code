@@ -2,8 +2,7 @@
 
 #include <unordered_map>
 
-namespace leetcode {
-namespace task1 {
+namespace leetcode::task1 {
 
 std::vector<int> solve(const std::vector<int>& nums, int target) {
   std::unordered_map<int, int> numMap;
@@ -20,5 +19,4 @@ std::vector<int> solve(const std::vector<int>& nums, int target) {
   return {};
 }
 
-}  // namespace task1
-}  // namespace leetcode
+}  // namespace leetcode::task1

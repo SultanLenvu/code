@@ -13,10 +13,8 @@
 
 #include <vector>
 
-namespace sort {
-namespace merge {
+namespace sort::merge {
 
 void solve(std::vector<int>& seq);
 
-}  // namespace merge
-}  // namespace sort
+}  // namespace sort::merge

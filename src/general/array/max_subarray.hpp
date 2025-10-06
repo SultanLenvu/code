@@ -13,10 +13,8 @@
 #pragma once
 
 #include <span>
-#include <vector>
 
-namespace array {
-namespace maxsub {
+namespace array::maxsub {
 
 /**
  * @brief Рекурсивный алгоритм
@@ -57,5 +55,4 @@ int solve1(const std::span<int>& array, std::span<int>& maxSubarray);
  */
 int solve2(const std::span<int>& array, std::span<int>& maxSubarray);
 
-}  // namespace maxsub
-}  // namespace array
+}  // namespace array::maxsub

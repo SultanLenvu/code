@@ -2,10 +2,8 @@
 
 #include "insert.hpp"
 
-namespace sort {
-namespace insert {
+namespace sort::insert {
 
 void solve() { std::cout << "Solve!"; }
 
-}  // namespace insert
-}  // namespace sort
+}  // namespace sort::insert

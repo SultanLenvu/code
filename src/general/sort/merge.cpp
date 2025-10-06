@@ -1,10 +1,6 @@
-#include <iostream>
-#include <iterator>
-
 #include "merge.hpp"
 
-namespace sort {
-namespace merge {
+namespace sort::merge {
 
 static void alg_rec(std::vector<int>& seq, int p, int r);
 static void merge(std::vector<int>& seq, int p, int q, int r);
@@ -42,5 +38,4 @@ void merge(std::vector<int>& seq, int p, int q, int r) {
   }
 }
 
-}  // namespace merge
-}  // namespace sort
+}  // namespace sort::merge

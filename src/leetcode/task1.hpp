@@ -14,10 +14,8 @@
 
 #include <vector>
 
-namespace leetcode {
-namespace task1 {
+namespace leetcode::task1 {
 
 std::vector<int> solve(const std::vector<int>& nums, int target);
 
-}  // namespace task1
-}  // namespace leetcode
+}  // namespace leetcode::task1
